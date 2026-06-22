@@ -1,333 +1,756 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Lydia Azevedo | Clínica Odontológica em Natal</title>
-    <style>
-        /* --- ESTILO ODONTO LUXO --- */
-        :root {
-            --bg-principal: #f8f9fa;
-            --bg-card: #ffffff;
-            --azul-odontologico: #0f4c81;
-            --azul-hover: #1b6ca8;
-            --detalhe-dourado: #d4af37;
-            --texto-escuro: #2b2b2b;
-            --texto-claro: #888888;
-            --borda: #eef2f5;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Lydia Azevedo | Cirurgiã-Dentista em Natal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6F0;
+    --ink:#2B2622;
+    --coral:#E8634B;
+    --coral-deep:#C94B36;
+    --enamel:#1F4D43;
+    --enamel-light:#2E6357;
+    --sand:#D9CFC2;
+    --sand-light:#EFE7DB;
+    --white:#FFFFFF;
+  }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  *{margin:0;padding:0;box-sizing:border-box;}
 
-        body {
-            background-color: var(--bg-principal);
-            color: var(--texto-escuro);
-        }
+  html{scroll-behavior:smooth;}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-        /* --- HEADER --- */
-        header {
-            background-color: var(--bg-card);
-            border-bottom: 1px solid var(--borda);
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            color: var(--azul-odontologico);
-            text-transform: uppercase;
-        }
+  a{color:inherit;text-decoration:none;}
 
-        .logo span {
-            color: var(--detalhe-dourado);
-        }
+  img{max-width:100%;display:block;}
 
-        .btn-header {
-            background-color: var(--azul-odontologico);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
 
-        .btn-header:hover {
-            background-color: var(--azul-hover);
-        }
+  /* ===== TOPO ===== */
+  .topbar{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:50;
+    background:rgba(251,246,240,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--sand);
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:16px;
+    padding-bottom:16px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .brand-mark{
+    width:30px;height:34px;
+    flex-shrink:0;
+  }
+  .topbar-cta{
+    background:var(--enamel);
+    color:var(--white);
+    padding:10px 20px;
+    border-radius:100px;
+    font-size:0.85rem;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .topbar-cta:hover{background:var(--enamel-light);transform:translateY(-1px);}
 
-        /* --- PRINCIPAL / HERO --- */
-        .hero {
-            text-align: center;
-            padding: 60px 5%;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
-            border-bottom: 1px solid var(--borda);
-        }
+  /* ===== HERO ===== */
+  .hero{
+    padding:148px 0 90px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--enamel);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--coral);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 4.6vw, 3.6rem);
+    line-height:1.06;
+    color:var(--ink);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--coral-deep);
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    color:#5C5349;
+    max-width:480px;
+    margin-top:22px;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--coral);
+    color:var(--white);
+    padding:16px 28px;
+    border-radius:100px;
+    font-weight:700;
+    font-size:0.95rem;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 8px 24px -8px rgba(232,99,75,0.55);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(232,99,75,0.6);}
+  .btn-secondary{
+    border:1.5px solid var(--ink);
+    color:var(--ink);
+    padding:15px 26px;
+    border-radius:100px;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  .hero-trust{
+    margin-top:30px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:0.82rem;
+    color:#6B6258;
+  }
+  .stars{color:var(--coral-deep);letter-spacing:1px;}
 
-        .hero h1 {
-            font-size: 36px;
-            color: var(--azul-odontologico);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
+  /* Hero visual: "ficha de sorriso" signature element */
+  .smile-card{
+    position:relative;
+    background:var(--white);
+    border-radius:22px;
+    padding:26px;
+    box-shadow:0 30px 60px -20px rgba(43,38,34,0.18);
+    transform:rotate(1.2deg);
+  }
+  .smile-card-tag{
+    position:absolute;
+    top:-14px;
+    left:26px;
+    background:var(--enamel);
+    color:var(--white);
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:7px 14px;
+    border-radius:100px;
+  }
+  .smile-card img{
+    border-radius:14px;
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .smile-card-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px dashed var(--sand);
+  }
+  .smile-card-footer .label{
+    font-size:0.72rem;
+    color:#8A8074;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  .smile-card-footer .value{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--enamel);
+  }
+  .floating-pill{
+    position:absolute;
+    background:var(--white);
+    border-radius:16px;
+    padding:12px 16px;
+    box-shadow:0 16px 32px -12px rgba(43,38,34,0.2);
+    font-size:0.8rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .pill-1{bottom:-22px;right:-18px;}
+  .pill-1 .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);}
 
-        .hero p {
-            font-size: 18px;
-            color: var(--texto-claro);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
+  /* ===== MARQUEE / SERVICES STRIP ===== */
+  .strip{
+    background:var(--enamel);
+    color:var(--sand-light);
+    padding:16px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    border-top:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .strip-inner{
+    display:inline-flex;
+    animation:scroll 28s linear infinite;
+  }
+  .strip-inner span{
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    padding:0 28px;
+    text-transform:uppercase;
+  }
+  .strip-inner span::after{content:'•';margin-left:28px;color:var(--coral);}
+  @keyframes scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .strip-inner{animation:none;}
+  }
 
-        .badge-google {
-            display: inline-flex;
-            align-items: center;
-            background-color: #fff;
-            border: 1px solid var(--borda);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            gap: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+  /* ===== SECTION HEADER GENERIC ===== */
+  .section{padding:90px 0;}
+  .section-head{
+    max-width:560px;
+    margin-bottom:52px;
+  }
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{
+    font-size:clamp(1.8rem, 3vw, 2.4rem);
+    line-height:1.12;
+  }
+  .section-head p{
+    color:#5C5349;
+    margin-top:14px;
+    font-size:1.02rem;
+  }
 
-        .badge-google span {
-            color: #ffc107;
-        }
+  /* ===== ANTES/DEPOIS ===== */
+  .transform-section{background:var(--sand-light);}
+  .transform-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .transform-card{
+    background:var(--white);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px -14px rgba(43,38,34,0.14);
+  }
+  .transform-card .imgwrap{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+  }
+  .transform-card img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  .transform-card .imgwrap .badge{
+    position:absolute;
+    top:12px;left:12px;
+    background:rgba(43,38,34,0.78);
+    color:var(--white);
+    font-size:0.68rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:5px 10px;
+    border-radius:100px;
+  }
+  .transform-card .caption{
+    padding:16px 18px 20px;
+  }
+  .transform-card .caption .proc{
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--ink);
+  }
+  .transform-card .caption .meta{
+    font-size:0.8rem;
+    color:#8A8074;
+    margin-top:3px;
+  }
 
-        /* --- SERVIÇOS --- */
-        .secao {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  /* ===== SERVIÇOS ===== */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  .service-card{
+    background:var(--white);
+    border:1px solid var(--sand);
+    border-radius:18px;
+    padding:30px 26px;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--coral);
+  }
+  .service-icon{
+    width:42px;height:42px;
+    color:var(--enamel);
+    margin-bottom:18px;
+  }
+  .service-card h3{
+    font-size:1.12rem;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .service-card p{
+    font-size:0.9rem;
+    color:#6B6258;
+  }
 
-        .secao h2 {
-            text-align: center;
-            font-size: 28px;
-            color: var(--azul-odontologico);
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+  /* ===== SOBRE ===== */
+  .about-section .wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-photo{
+    position:relative;
+  }
+  .about-photo img{
+    border-radius:20px;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    width:100%;
+  }
+  .about-photo-tag{
+    position:absolute;
+    bottom:-18px;
+    left:-18px;
+    background:var(--coral);
+    color:var(--white);
+    padding:14px 18px;
+    border-radius:14px;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:0.95rem;
+    box-shadow:0 14px 28px -10px rgba(232,99,75,0.5);
+  }
+  .about-text p{
+    color:#5C5349;
+    margin-top:16px;
+    font-size:1rem;
+  }
+  .about-cred{
+    display:inline-block;
+    margin-top:24px;
+    font-size:0.82rem;
+    color:var(--enamel);
+    font-weight:700;
+    letter-spacing:0.03em;
+    background:var(--sand-light);
+    padding:8px 14px;
+    border-radius:100px;
+  }
 
-        .grid-servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+  /* ===== DEPOIMENTOS ===== */
+  .testimonial-section{background:var(--enamel);color:var(--sand-light);}
+  .testimonial-section .section-head h2{color:var(--white);}
+  .testimonial-section .section-head p{color:#BFD0CA;}
+  .testimonial-section .eyebrow{color:var(--coral);}
+  .testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .testimonial-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;
+    padding:28px;
+  }
+  .testimonial-card .stars{color:var(--coral);margin-bottom:14px;display:block;}
+  .testimonial-card p{
+    font-size:0.95rem;
+    color:#E4ECE9;
+    margin-bottom:18px;
+  }
+  .testimonial-card .who{
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--white);
+  }
+  .testimonial-card .who span{
+    display:block;
+    font-weight:400;
+    color:#9FB6AE;
+    font-size:0.78rem;
+    margin-top:2px;
+  }
 
-        .card-servico {
-            background-color: var(--bg-card);
-            border: 1px solid var(--borda);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
-        }
+  /* ===== CTA FINAL ===== */
+  .final-cta{
+    background:var(--coral);
+    border-radius:28px;
+    padding:64px 50px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .final-cta::before{
+    content:'';
+    position:absolute;
+    width:340px;height:340px;
+    background:radial-gradient(circle,rgba(255,255,255,0.16),transparent 70%);
+    top:-120px;right:-80px;
+  }
+  .final-cta h2{
+    color:var(--white);
+    font-size:clamp(1.8rem,3.4vw,2.5rem);
+    max-width:600px;
+    margin:0 auto;
+    line-height:1.15;
+    position:relative;
+  }
+  .final-cta p{
+    color:rgba(255,255,255,0.88);
+    margin-top:14px;
+    font-size:1rem;
+    position:relative;
+  }
+  .final-cta .btn-primary{
+    background:var(--white);
+    color:var(--coral-deep);
+    margin-top:30px;
+    box-shadow:0 14px 30px -10px rgba(0,0,0,0.25);
+    position:relative;
+  }
+  .final-cta .btn-primary:hover{background:var(--sand-light);}
 
-        .card-servico:hover {
-            transform: translateY(-5px);
-            border-color: var(--azul-odontologico);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
+  /* ===== RODAPÉ ===== */
+  footer{
+    padding:48px 0 36px;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:24px;
+    border-top:1px solid var(--sand);
+    padding-top:32px;
+  }
+  footer .brand{font-size:1rem;}
+  footer .addr{
+    font-size:0.85rem;
+    color:#8A8074;
+    max-width:320px;
+    text-align:right;
+  }
+  .whatsapp-float{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    z-index:60;
+    background:#25D366;
+    width:58px;height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 26px -8px rgba(37,211,102,0.6);
+    transition:transform .2s ease;
+  }
+  .whatsapp-float:hover{transform:scale(1.08);}
+  .whatsapp-float svg{width:28px;height:28px;}
 
-        .card-servico h3 {
-            color: var(--azul-odontologico);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--enamel);
+    outline-offset:3px;
+  }
 
-        .card-servico p {
-            color: var(--texto-claro);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* --- LOCALIZAÇÃO & CONTATO --- */
-        .container-contato {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .bloco-info {
-            flex: 1;
-            min-width: 300px;
-            background-color: var(--bg-card);
-            border: 1px solid var(--borda);
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        .bloco-info h3 {
-            color: var(--azul-odontologico);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--borda);
-            padding-bottom: 10px;
-        }
-
-        .info-linha {
-            margin-bottom: 15px;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .info-linha strong {
-            color: var(--azul-odontologico);
-        }
-
-        .btn-acao {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            background-color: var(--azul-odontologico);
-            color: white;
-            padding: 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-
-        .btn-acao:hover {
-            background-color: var(--azul-hover);
-        }
-
-        /* --- WHATSAPP FLUTUANTE --- */
-        .btn-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--texto-claro);
-            font-size: 14px;
-            border-top: 1px solid var(--borda);
-            background-color: #ffffff;
-        }
-    </style>
+  /* ===== RESPONSIVO ===== */
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:48px;}
+    .hero{padding:128px 0 70px;}
+    .transform-grid,.services-grid,.testimonial-grid{grid-template-columns:1fr;}
+    .about-section .wrap{grid-template-columns:1fr;}
+    .about-photo{max-width:320px;margin:0 auto;}
+    .final-cta{padding:48px 26px;}
+    .footer-grid{flex-direction:column;align-items:flex-start;}
+    .footer-grid .addr{text-align:left;}
+    .pill-1{right:10px;}
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Dra. Lydia <span>Azevedo</span></div>
-        <button class="btn-header" onclick="irParaContato()">Agendar Consulta</button>
-    </header>
-
-    <section class="hero">
-        <div class="badge-google">
-            <span>★★★★★</span> 5.0 (5 Avaliações de Pacientes)
-        </div>
-        <h1 style="margin-top: 20px;">Clínica Odontológica Dra. Lydia Azevedo</h1>
-        <p>Atendimento humanizado e especializado em Felipe Camarão, Natal. Cuidando do seu sorriso com dedicação, tecnologia e total conforto.</p>
-        <button class="btn-header" style="padding: 15px 30px; font-size: 16px;" onclick="abrirWhatsapp()">Falar no WhatsApp Agora</button>
-    </section>
-
-    <section class="secao">
-        <h2>Procedimentos realizados</h2>
-        <div class="grid-servicos">
-            <div class="card-servico">
-                <h3>Consulta Geral</h3>
-                <p>Avaliação completa da saúde bucal, diagnóstico preciso e plano de tratamento personalizado para o seu caso.</p>
-            </div>
-            <div class="card-servico">
-                <h3>Limpeza Dental</h3>
-                <p>Remoção de tártaro e placa bacteriana, aplicação de flúor e profilaxia completa para manter suas gengivas saudáveis.</p>
-            </div>
-            <div class="card-servico">
-                <h3>Tratamento de Clínico Geral</h3>
-                <p>Restaurações estéticas, tratamentos preventivos e cuidados essenciais para a rotina do seu sorriso.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="secao" id="contato-secao">
-        <h2>Localização & Contato</h2>
-        <div class="container-contato">
-            
-            <div class="bloco-info">
-                <h3>Informações da Clínica</h3>
-                <div class="info-linha">
-                    <strong>Endereço:</strong><br>
-                    Felipe Camarão, Natal - RN, CEP: 59074-305
-                </div>
-                <div class="info-linha">
-                    <strong>Telefone Principal:</strong><br>
-                    (84) 98894-0135
-                </div>
-                <div class="info-linha">
-                    <strong>WhatsApp de Agendamento:</strong><br>
-                    (84) 98894-0135
-                </div>
-                <a href="tel:84988940135" class="btn-acao" style="background-color: #f8f9fa; color: var(--azul-odontologico); border: 1px solid var(--azul-odontologico);">Ligar para a Clínica</a>
-                <a href="#" class="btn-acao" onclick="abrirWhatsapp()">Agendar via WhatsApp</a>
-            </div>
-
-            <div class="bloco-info" style="padding: 15px; display: flex; flex-direction: column; justify-content: center; background-color: #1a1a1a; min-height: 300px; border-radius: 8px;">
-                <p style="color: #fff; text-align: center; margin-bottom: 10px; font-size: 14px;">📍 Localização Próxima ao Supermercado Superbox Natal</p>
-                <div style="width: 100%; height: 100%; min-height: 220px; background-image: url('https://i.imgur.com/K3VwN5k.png'); background-size: cover; background-position: center; border-radius: 4px;"></div>
-            </div>
-
-        </div>
-    </section>
-
-    <a href="#" class="btn-whatsapp" onclick="abrirWhatsapp()" title="Agendar Consulta">
-        🗪
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 1C9 1 5 5 5 11c0 5 1.5 8 2.3 13.4.4 2.7.9 6.4 2.7 7.6 1.8 1.2 2.6-1.4 3-4.8.3-2.8.9-5.2 2-5.2s1.7 2.4 2 5.2c.4 3.4 1.2 6 3 4.8 1.8-1.2 2.3-4.9 2.7-7.6C23.5 19 25 16 25 11c0-6-4-10-10-10Z" fill="#1F4D43"/>
+      </svg>
+      Dra. Lydia Azevedo
+    </div>
+    <a href="https://wa.me/5584000000000" class="topbar-cta" target="_blank" rel="noopener">
+      Agendar consulta
     </a>
+  </div>
+</div>
 
-    <footer>
-        <p>&copy; 2026 Clínica Dra. Lydia Azevedo. Todos os direitos reservados.</p>
-        <p style="font-size: 11px; margin-top: 5px; color: #aaa;">Contatos tratados em conformidade com as diretrizes locais de privacidade.</p>
-    </footer>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Cirurgiã-dentista · CRO/RN 6077 · Felipe Camarão, Natal</div>
+        <h1>Seu sorriso conta<br>a <em>sua</em> história.<br>Vamos cuidar dela.</h1>
+        <p class="lede">Atendimento humano e tratamentos completos — de odontopediatria a facetas e ortodontia — a poucos minutos de você, em Felipe Camarão.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5584000000000" class="btn-primary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.1l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+            Marcar pelo WhatsApp
+          </a>
+          <a href="#tratamentos" class="btn-secondary">Ver tratamentos</a>
+        </div>
+        <div class="hero-trust">
+          <span class="stars">★★★★★</span>
+          <span>Avaliações reais de pacientes atendidos em Natal/RN</span>
+        </div>
+      </div>
 
-    <script>
-        const TELEFONE_OFICIAL = "5584988940135";
+      <div class="smile-card">
+        <div class="smile-card-tag">Caso real</div>
+        <img src="https://images.unsplash.com/photo-1581585104219-c1f4c5e93ea9?w=800&q=80" alt="Sorriso após tratamento odontológico">
+        <div class="smile-card-footer">
+          <div>
+            <div class="label">Procedimento</div>
+            <div class="value">Reabilitação estética</div>
+          </div>
+          <div style="text-align:right">
+            <div class="label">Resultado</div>
+            <div class="value">12 sessões</div>
+          </div>
+        </div>
+        <div class="floating-pill pill-1"><span class="dot"></span> Vagas esta semana</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function abrirWhatsapp() {
-            const mensagem = encodeURIComponent("Olá, Dra. Lydia! Gostaria de agendar uma consulta odontológica na sua clínica.");
-            window.open(`https://wa.me/${TELEFONE_OFICIAL}?text=${mensagem}`, '_blank');
-        }
+<div class="strip">
+  <div class="strip-inner">
+    <span>Ortodontia</span><span>Facetas</span><span>Prótese</span><span>Dentística</span><span>Coroas</span><span>Clareamento</span><span>Botox</span><span>Preenchimento</span><span>Odontopediatria</span>
+    <span>Ortodontia</span><span>Facetas</span><span>Prótese</span><span>Dentística</span><span>Coroas</span><span>Clareamento</span><span>Botox</span><span>Preenchimento</span><span>Odontopediatria</span>
+  </div>
+</div>
 
-        function irParaContato() {
-            document.getElementById('contato-secao').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+<section class="transform-section section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Resultados</div>
+      <h2>O antes e depois fala mais que qualquer descrição.</h2>
+      <p>Cada caso é acompanhado de perto — do diagnóstico ao resultado final, com transparência sobre prazos e cuidados.</p>
+    </div>
+    <div class="transform-grid">
+      <div class="transform-card">
+        <div class="imgwrap">
+          <span class="badge">Antes e depois</span>
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Caso de clareamento dental">
+        </div>
+        <div class="caption">
+          <div class="proc">Clareamento dental</div>
+          <div class="meta">Resultado em 3 sessões</div>
+        </div>
+      </div>
+      <div class="transform-card">
+        <div class="imgwrap">
+          <span class="badge">Antes e depois</span>
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Caso de facetas dentárias">
+        </div>
+        <div class="caption">
+          <div class="proc">Facetas em resina</div>
+          <div class="meta">Resultado em 2 sessões</div>
+        </div>
+      </div>
+      <div class="transform-card">
+        <div class="imgwrap">
+          <span class="badge">Antes e depois</span>
+          <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Caso de prótese dentária">
+        </div>
+        <div class="caption">
+          <div class="proc">Prótese e reabilitação</div>
+          <div class="meta">Resultado em 6 sessões</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tratamentos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tratamentos</div>
+      <h2>Tudo que o seu sorriso precisa, em um só lugar.</h2>
+      <p>Da prevenção infantil à estética facial — atendimento completo, sem precisar buscar outra clínica.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c-3.3 0-6 2.5-6 6.5 0 2.7.8 4.4 1.3 7.3.2 1.5.5 3.5 1.5 4.2 1 .6 1.4-.8 1.7-2.6.2-1.5.5-2.8 1.5-2.8s1.3 1.3 1.5 2.8c.3 1.8.7 3.2 1.7 2.6 1-.7 1.3-2.7 1.5-4.2.5-2.9 1.3-4.6 1.3-7.3C18 5.5 15.3 3 12 3Z"/></svg>
+        <h3>Ortodontia</h3>
+        <p>Aparelhos para todas as idades, com acompanhamento mensal e plano de tratamento claro.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12c0-4 3.5-8 8-8s8 4 8 8-3 7-8 7-8-3-8-7Z"/><path d="M9 12h6"/></svg>
+        <h3>Facetas &amp; Dentística</h3>
+        <p>Harmonização do sorriso com técnicas que preservam o dente natural.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Clareamento</h3>
+        <p>Procedimento rápido e seguro, com resultado perceptível já nas primeiras sessões.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h14v6a7 7 0 0 1-14 0V4Z"/><path d="M12 17v3"/></svg>
+        <h3>Prótese &amp; Coroas</h3>
+        <p>Recupere a função e a estética com peças planejadas sob medida.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2"/></svg>
+        <h3>Odontopediatria</h3>
+        <p>Primeira consulta sem trauma — preparada para acolher crianças com calma.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-4 8-8 11Z"/></svg>
+        <h3>Botox &amp; Preenchimento</h3>
+        <p>Harmonização facial com avaliação técnica e resultado natural.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section section">
+  <div class="wrap">
+    <div class="about-photo">
+      <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=80" alt="Dra. Lydia Azevedo em consultório">
+      <div class="about-photo-tag">CRO/RN 6077</div>
+    </div>
+    <div class="about-text">
+      <div class="eyebrow">Quem cuida do seu sorriso</div>
+      <h2>Dra. Lydia Azevedo</h2>
+      <p>Atendimento próximo, no bairro Felipe Camarão, com foco em explicar cada etapa do tratamento antes de começar — para você decidir com segurança, sem pressa e sem surpresas na cadeira.</p>
+      <p>Da primeira consulta ao acompanhamento pós-tratamento, o cuidado é pensado para durar — não só para resolver o problema do momento.</p>
+      <span class="about-cred">Cirurgiã-dentista · Atendimento adulto e infantil</span>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial-section section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Quem já passou por aqui</div>
+      <h2>O que dizem os pacientes</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <span class="stars">★★★★★</span>
+        <p>"Levei minha filha com muito medo de dentista e a Dra. Lydia conseguiu deixar ela tranquila. Hoje ela nem chora mais na consulta."</p>
+        <div class="who">Paciente de odontopediatria<span>Felipe Camarão, Natal</span></div>
+      </div>
+      <div class="testimonial-card">
+        <span class="stars">★★★★★</span>
+        <p>"Fiz facetas e o resultado ficou super natural. Expliquei o que eu queria e o resultado foi exatamente aquilo, sem exagero."</p>
+        <div class="who">Paciente de facetas<span>Natal, RN</span></div>
+      </div>
+      <div class="testimonial-card">
+        <span class="stars">★★★★★</span>
+        <p>"Atendimento rápido pelo WhatsApp, consegui marcar no mesmo dia. Achei o consultório limpo, organizado e o tratamento foi indolor."</p>
+        <div class="who">Paciente de clareamento<span>Natal, RN</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Seu sorriso não precisa esperar mais um dia.</h2>
+      <p>Fale agora com a Dra. Lydia pelo WhatsApp e marque sua avaliação.</p>
+      <a href="https://wa.me/5584000000000" class="btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.1l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+        Marcar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="brand">Dra. Lydia Azevedo</div>
+      <div class="addr">Rua Professor Antônio Trigueiro, n°400A — Felipe Camarão, Natal/RN, 59074-100</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5584000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.1l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+</a>
+
 </body>
 </html>
