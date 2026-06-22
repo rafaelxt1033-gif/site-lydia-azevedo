@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Lydia Azevedo | Clínica Odontológica em Natal</title>
+    <style>
+        /* --- ESTILO ODONTO LUXO --- */
+        :root {
+            --bg-principal: #f8f9fa;
+            --bg-card: #ffffff;
+            --azul-odontologico: #0f4c81;
+            --azul-hover: #1b6ca8;
+            --detalhe-dourado: #d4af37;
+            --texto-escuro: #2b2b2b;
+            --texto-claro: #888888;
+            --borda: #eef2f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-escuro);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--borda);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--azul-odontologico);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--detalhe-dourado);
+        }
+
+        .btn-header {
+            background-color: var(--azul-odontologico);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-header:hover {
+            background-color: var(--azul-hover);
+        }
+
+        /* --- PRINCIPAL / HERO --- */
+        .hero {
+            text-align: center;
+            padding: 60px 5%;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            color: var(--azul-odontologico);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--texto-claro);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+
+        .badge-google {
+            display: inline-flex;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid var(--borda);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            gap: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .badge-google span {
+            color: #ffc107;
+        }
+
+        /* --- SERVIÇOS --- */
+        .secao {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .secao h2 {
+            text-align: center;
+            font-size: 28px;
+            color: var(--azul-odontologico);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card-servico {
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+        }
+
+        .card-servico:hover {
+            transform: translateY(-5px);
+            border-color: var(--azul-odontologico);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-servico h3 {
+            color: var(--azul-odontologico);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .card-servico p {
+            color: var(--texto-claro);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* --- LOCALIZAÇÃO & CONTATO --- */
+        .container-contato {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .bloco-info {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .bloco-info h3 {
+            color: var(--azul-odontologico);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--borda);
+            padding-bottom: 10px;
+        }
+
+        .info-linha {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .info-linha strong {
+            color: var(--azul-odontologico);
+        }
+
+        .btn-acao {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--azul-odontologico);
+            color: white;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-acao:hover {
+            background-color: var(--azul-hover);
+        }
+
+        /* --- WHATSAPP FLUTUANTE --- */
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--texto-claro);
+            font-size: 14px;
+            border-top: 1px solid var(--borda);
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Dra. Lydia <span>Azevedo</span></div>
+        <button class="btn-header" onclick="irParaContato()">Agendar Consulta</button>
+    </header>
+
+    <section class="hero">
+        <div class="badge-google">
+            <span>★★★★★</span> 5.0 (5 Avaliações de Pacientes)
+        </div>
+        <h1 style="margin-top: 20px;">Clínica Odontológica Dra. Lydia Azevedo</h1>
+        <p>Atendimento humanizado e especializado em Felipe Camarão, Natal. Cuidando do seu sorriso com dedicação, tecnologia e total conforto.</p>
+        <button class="btn-header" style="padding: 15px 30px; font-size: 16px;" onclick="abrirWhatsapp()">Falar no WhatsApp Agora</button>
+    </section>
+
+    <section class="secao">
+        <h2>Procedimentos realizados</h2>
+        <div class="grid-servicos">
+            <div class="card-servico">
+                <h3>Consulta Geral</h3>
+                <p>Avaliação completa da saúde bucal, diagnóstico preciso e plano de tratamento personalizado para o seu caso.</p>
+            </div>
+            <div class="card-servico">
+                <h3>Limpeza Dental</h3>
+                <p>Remoção de tártaro e placa bacteriana, aplicação de flúor e profilaxia completa para manter suas gengivas saudáveis.</p>
+            </div>
+            <div class="card-servico">
+                <h3>Tratamento de Clínico Geral</h3>
+                <p>Restaurações estéticas, tratamentos preventivos e cuidados essenciais para a rotina do seu sorriso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao" id="contato-secao">
+        <h2>Localização & Contato</h2>
+        <div class="container-contato">
+            
+            <div class="bloco-info">
+                <h3>Informações da Clínica</h3>
+                <div class="info-linha">
+                    <strong>Endereço:</strong><br>
+                    Felipe Camarão, Natal - RN, CEP: 59074-305
+                </div>
+                <div class="info-linha">
+                    <strong>Telefone Principal:</strong><br>
+                    (84) 98894-0135
+                </div>
+                <div class="info-linha">
+                    <strong>WhatsApp de Agendamento:</strong><br>
+                    (84) 98894-0135
+                </div>
+                <a href="tel:84988940135" class="btn-acao" style="background-color: #f8f9fa; color: var(--azul-odontologico); border: 1px solid var(--azul-odontologico);">Ligar para a Clínica</a>
+                <a href="#" class="btn-acao" onclick="abrirWhatsapp()">Agendar via WhatsApp</a>
+            </div>
+
+            <div class="bloco-info" style="padding: 15px; display: flex; flex-direction: column; justify-content: center; background-color: #1a1a1a; min-height: 300px; border-radius: 8px;">
+                <p style="color: #fff; text-align: center; margin-bottom: 10px; font-size: 14px;">📍 Localização Próxima ao Supermercado Superbox Natal</p>
+                <div style="width: 100%; height: 100%; min-height: 220px; background-image: url('https://i.imgur.com/K3VwN5k.png'); background-size: cover; background-position: center; border-radius: 4px;"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <a href="#" class="btn-whatsapp" onclick="abrirWhatsapp()" title="Agendar Consulta">
+        🗪
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Clínica Dra. Lydia Azevedo. Todos os direitos reservados.</p>
+        <p style="font-size: 11px; margin-top: 5px; color: #aaa;">Contatos tratados em conformidade com as diretrizes locais de privacidade.</p>
+    </footer>
+
+    <script>
+        const TELEFONE_OFICIAL = "5584988940135";
+
+        function abrirWhatsapp() {
+            const mensagem = encodeURIComponent("Olá, Dra. Lydia! Gostaria de agendar uma consulta odontológica na sua clínica.");
+            window.open(`https://wa.me/${TELEFONE_OFICIAL}?text=${mensagem}`, '_blank');
+        }
+
+        function irParaContato() {
+            document.getElementById('contato-secao').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
